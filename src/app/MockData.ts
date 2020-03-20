@@ -71,14 +71,6 @@ export const Data : Product[] = [
         desc : "Mô tả sản phẩm",
         status: true,
         img : "http://placehold.it/700x400",
-    },
-    {
-        id : 10,
-        name : "product 10",
-        price : 123,
-        desc : "Mô tả sản phẩm",
-        status: true,
-        img : "http://placehold.it/700x400",
-    },
+    }
   
 ]
