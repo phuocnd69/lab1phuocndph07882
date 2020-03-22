@@ -1,3 +1,7 @@
+<div *ngIf="selected">
+  <app-product-detail [product]="selected"></app-product-detail>
+</div>
+
 <div class="row">
     <div class="col-lg-4 col-md-6 mb-4"  *ngFor="let product of products">
       <div class="card h-100">
@@ -10,7 +14,7 @@
           <p class="card-text">{{product.desc}}</p>
         </div>
         <div class="card-footer">
-          <button class="btn btn-primary" (click)="showDetail(product)">Chi tiết</button>
+         <button class="btn btn-primary" (click)="showDetail(product)">Detail</button>
           <br><br>
           <button class="btn btn-primary" (click)="removeItem(product.id)">Xóa</button>
           <br><br>
