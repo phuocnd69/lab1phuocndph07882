@@ -1,14 +1,25 @@
 import { Injectable } from '@angular/core';
-import { Data } from './MockData';
-import { Product } from './product';
 
-@Injectable()
+import{ Data } from './MockData';
+import{ Product } from './product';
+
+@Injectable({
+  providedIn: 'root'
+})
 export class ProductService {
-  products = Data;
+  products=Data;
   constructor() { }
+ 
 
-  getProduct(){
+  getProducts(){
     return this.products;
   }
+  
+addProduct(product){
+  console.log(product);
+  let newObj = {  ...product };
+  this.products.push(newObj);
+  
+}
 
 }

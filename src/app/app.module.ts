@@ -11,10 +11,11 @@ import { CategoryComponent } from './category/category.component';
 import { ProductManagerComponent } from './product-manager/product-manager.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { ProductService } from './product.service';
+import { AddProductComponent } from './add-product/add-product.component';
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule ],
-  declarations: [ AppComponent, HelloComponent, SlideComponent, ProductComponent, ProductListComponent, CategoryComponent, ProductManagerComponent, ProductDetailComponent ],
+  declarations: [ AppComponent, HelloComponent, SlideComponent, ProductComponent, ProductListComponent, CategoryComponent, ProductManagerComponent, ProductDetailComponent, AddProductComponent ],
   bootstrap:    [ AppComponent ],
   providers: [ProductService]
 })

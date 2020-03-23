@@ -1,30 +1,49 @@
-<div *ngIf="selected">
-  <app-product-detail [product]="selected"></app-product-detail>
-</div>
-
 <div class="row">
-    <div class="col-lg-4 col-md-6 mb-4"  *ngFor="let product of products">
-      <div class="card h-100">
-        <a href="#"><img class="card-img-top" [src]=product.img alt=""></a>
-        <div class="card-body">
-          <h4 class="card-title">
-            <a href="#">{{product.name}}</a>
-          </h4>
-          <h5>${{product.price}}</h5>
-          <p class="card-text">{{product.desc}}</p>
-        </div>
-        <div class="card-footer">
-         <button class="btn btn-primary" (click)="showDetail(product)">Detail</button>
-          <br><br>
-          <button class="btn btn-primary" (click)="removeItem(product.id)">Xóa</button>
-          <br><br>
-					<small class="text-muted"></small>
-				</div>
-        </div>
-      </div>
-  
+    <!-- <app-product class="col-lg-4 col-md-6 mb-4"></app-product>
+    <app-product class="col-lg-4 col-md-6 mb-4"></app-product>
+    <app-product class="col-lg-4 col-md-6 mb-4"></app-product> -->
+    <div class="col-lg-4 col-md-6 mb-4" *ngFor="let product of products" >
+
+        <div class="card h-100">
+            <a href="#"><img class="card-img-top" [src]="product.img" alt=""></a>
+            <div class="card-body">
+              <h4 class="card-title">
+                <a href="#">{{product.name}}</a>
+              </h4>
+              <h5>${{product.price}}</h5>
+              <p class="card-text">{{product.status}}</p>
+            </div>
+            <div class="card-footer">
+              <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+                <button class="btn btn-primary d-block w-100 btn-lg" (click)="showDetail(product)">show</button>
+ 
+            </div>
+          </div>
+
     </div>
-    <p *ngIf="selected">{{selected.name}}</p>
-    <p *ngIf="selected">{{selected.price}}</p>      
-    <p *ngIf="selected">{{selected.desc}}</p>  
     
+</div>
+<table class="table table-dark">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Product Name</th>
+        <th scope="col">Photo</th>
+        <th scope="col">Price</th>
+        <th scope="col">Status</th>
+        <!-- <th scope="col">Action</th> -->
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row" ><p *ngIf="selected">{{selected.id}}</p></th>
+        <td ><p *ngIf="selected">{{selected.name}}</p></td>
+        <td ><p *ngIf="selected"><img  style="width: 70px; height: 40px;" src="{{selected.img}}" alt=""></p></td>
+        <td ><p *ngIf="selected">{{selected.price}}</p></td>
+        <td ><p *ngIf="selected">{{selected.status}}</p></td>
+        <!-- <td> <button class="btn btn-primary d-block w-100 btn-lg" (click)="removeItem(selected.id)">Delete</button></td> -->
+      </tr>
+      
+    </tbody>
+  </table>
+<!-- <p *ngIf="selected">{{selected.name}}</p> -->
